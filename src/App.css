@@ -1,38 +1,128 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital@0;1&display=swap');
+
+:root {
+  --position: 2px;
+  --headercolor: #f37107;
+  --header: #FFEBCD;
+  --slidecolor: #fdcaad;
+  --slidebefore: #f34506;
+  --addbutton: #f36507;
+  --noteheader: #f37107;
+  --white: #FFF;
+  --noteborder: #ABCABC;
+  --textcolor: #000;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.header {
+  height: 15vh;
+  background-color: var(--header);
+  color: var(--headercolor);
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-between;
+  border: 1px solid var(--headercolor);
 }
 
-.App-link {
-  color: #61dafb;
+.logo {
+  font-size: 2.5rem;
+  margin-left: 15px;
+  font-style: italic;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.slide {
+  position: relative;
+  width: 64px;
+  height: 34px;
+  background-color: var(--slidecolor);
+  border-radius: 15px;
+  transition: .4s;
+  cursor: pointer;
+}
+
+.slide:before {
+  position: absolute;
+  content: '';
+  width: 30px;
+  height: 30px;
+  background-color: var(--slidebefore);
+  top: 2px;
+  left: var(--position);
+  border-radius: 15px;
+  transition: .4s;
+  /* left: 31px; */
+}
+
+.add-note {
+  padding: 8px 15px;
+  margin: 20px 0 10px 70px;
+  background-color: var(--addbutton);
+  color: var(--white);
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  font-weight: bolder;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+
+.note-container {
+  margin: 10px auto 30px;
+  height: 30vh;
+  width: 90%;
+  
+}
+
+.note-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--noteheader);
+  color: var(--white);
+  height: 25%;
+  padding: 10px;
+  border-radius: 5px 5px 0 0;
+  font-weight: bold;
+}
+
+.note-body {
+  height: 75%;
+  width: 100%;
+  border: 1px solid var(--noteborder);
+  padding: 10px;
+  font-size: 1rem;
+  resize: none;
+  overflow: auto;
+  outline: none;
+  background-color: var(--white);
+  color: var(--textcolor);
+}
+
+.note-button button{
+  margin: 3px;
+  padding: 5px 15px;
+  cursor: pointer;
+}
+
+.change-mode {
+  margin-right: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.change-mode span {
+  margin-right: 10px;
+  font-size: 1.2rem;
+}
+
+.container {
+  background-color: var(--white);
+  height: 100vh;
 }
